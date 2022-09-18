@@ -1,0 +1,20 @@
+num_of_train_samples = 5000
+num_of_test_samples = 1000
+num_of_valid_samples = 1000
+
+model = tf.keras.models.Sequential([
+    tf.keras.layers.Input((21 * 2,)),
+    tf.keras.layers.Dense(42, activation='relu'),
+    tf.keras.layers.Dropout(0.4),
+    tf.keras.layers.Dense(24, activation='relu'),
+    tf.keras.layers.Dense(NUM_OF_CLASSES, activation='softmax')
+])
+model.summary()
+
+learning_rate = DEFAULT
+optimizer = Adam
+loss='categorical_crossentropy'
+metrics=['accuracy']
+
+epochs=200
+batch_size=100	
